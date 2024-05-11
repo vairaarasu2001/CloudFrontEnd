@@ -10,7 +10,7 @@ export default function Contacts({ contacts, changeChat }) {
     const data = await JSON.parse(
       localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)
     );
-    setCurrentUserName(data.username);
+    setCurrentUserName(data.password);
     setCurrentUserImage(data.avatarImage);
   }, []);
   const changeCurrentChat = (index, contact) => {
@@ -41,8 +41,8 @@ export default function Contacts({ contacts, changeChat }) {
                       alt=""
                     />
                   </div>
-                  <div className="username">
-                    <h3>{contact.username}</h3>
+                  <div className="password">
+                    <h3>{contact.password}</h3>
                   </div>
                 </div>
               );
@@ -55,7 +55,7 @@ export default function Contacts({ contacts, changeChat }) {
                 alt="avatar"
               />
             </div>
-            <div className="username">
+            <div className="password">
               <h2>{currentUserName}</h2>
             </div>
           </div>
